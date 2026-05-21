@@ -1,0 +1,31 @@
+body{
+    background-color: rgba(159, 205, 50, 0.559);
+}
+
+
+ h1{
+            text-align:center;
+            color:rgb(255, 136, 0);
+           font: italic bold 28px/1.5 Arial, sans-serif;
+        }
+        h2{
+            color:rgb(55, 0, 255)
+        }
+        p{
+            font bold 15px/2.0 Arial,sans-serif;
+            color:rgba(98, 0, 255, 0.61)
+        }
+        button{
+            width:100%;
+            padding:10px;
+            margin-top:15px;
+            background:green;
+            color:white;
+            border:none;
+            font-size:18px;
+            cursor:pointer;
+        }
+         footer{
+            font bold 15px/2.0 arial,sans-serif;
+            color:rgb(149, 0, 255)
+         }

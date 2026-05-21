@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Order Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+        
+        .required::after {
+            content: " *";
+            color: red;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        button[type="reset"] {
+            background-color: #6c757d;
+        }
+        
+        button[type="reset"]:hover {
+            background-color: #545b62;
+        }
+        
+        .button-group {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Entry Form</h1>
+    
+    <form id="dataEntryForm" action="#" method="POST">
+        
+        <!-- Personal Information -->
+        <div class="form-group">
+            <label for="fullName" class="required">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required 
+                   placeholder="Enter your full name">
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="required">Email Address</label>
+            <input type="email" id="email" name="email" required 
+                   placeholder="example@email.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" 
+                   placeholder="(123) 456-7890">
+        </div>
+        
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="">-- Select --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="prefer-not">Prefer not to say</option>
+            </select>
+        </div>
+        
+        //<div class="form-group">
+            //<label for="department" class="required">Department</label>
+           // <select id="department" name="department" required>
+                //<option value="">-- Select Department --</option>
+                //<option value="sales">Sales</option>
+           //<option value="marketing">Marketing</option>
+                //<option value="engineering">Engineering</option>
+                //<option value="hr">Human Resources</option>
+                /<option value="finance">Finance</option>
+            //</select>
+        //</div>
+        
+        <div class="form-group">
+            <label for="experience">Years of Experience</label>
+            <input type="number" id="experience" name="experience" 
+                   min="0" max="50" placeholder="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" rows="4" 
+                      placeholder="Enter any additional information..."></textarea>
+        </div>
+        
+        <div class="button-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Clear Form</button>
+        </div>
+        
+    </form>
+    <script>
+        document.getElementById('dataEntryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Display in console (replace with your submission logic)
+            console.log('Form Data Submitted:', data);
+            
+            alert('Data submitted successfully!\nCheck console for details.');
+        });
+    </script>
+</body>
+</html>
